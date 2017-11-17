@@ -41,6 +41,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(310, 29);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "USER NAME";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -59,7 +61,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(310, 34);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "VALIDAR";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -68,7 +70,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(310, 34);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button1";
+            this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // textBox2
@@ -77,6 +79,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(310, 29);
             this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "PASSWORD";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // login
             // 
@@ -84,14 +88,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(330, 359);
+            this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "login";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
