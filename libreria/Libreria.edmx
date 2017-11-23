@@ -15,7 +15,6 @@
         <EntityContainer Name="LibreriaContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CrendencialesSet" EntityType="Libreria.Crendenciales" />
           <EntitySet Name="LibrosSet" EntityType="Libreria.Libros" />
-          <EntitySet Name="AutoresSet" EntityType="Libreria.Autores" />
           <EntitySet Name="LibroAutorSet" EntityType="Libreria.LibroAutor" />
           <AssociationSet Name="LibrosLibroAutor" Association="Libreria.LibrosLibroAutor">
             <End Role="Libros" EntitySet="LibrosSet" />
@@ -51,6 +50,7 @@
             <End Role="LibroEjemplar" EntitySet="LibroEjemplarSet" />
             <End Role="Historial_Prestamo" EntitySet="Historial_PrestamoSet" />
           </AssociationSet>
+          <EntitySet Name="AutoresSet" EntityType="Libreria.Autores" />
         </EntityContainer>
         <EntityType Name="Crendenciales">
           <Key>
@@ -76,9 +76,6 @@
           <NavigationProperty Name="LibroEjemplar" Relationship="Libreria.LibrosLibroEjemplar" FromRole="Libros" ToRole="LibroEjemplar" />
         </EntityType>
         <EntityType Name="Autores">
-          <Key>
-            <PropertyRef Name="Codigo" />
-          </Key>
           <Property Name="Codigo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" />
           <Property Name="Apellido" Type="String" Nullable="false" />
@@ -115,10 +112,8 @@
           <End Type="Libreria.LibroAutor" Role="LibroAutor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Autores">
-              <PropertyRef Name="Codigo" />
             </Principal>
             <Dependent Role="LibroAutor">
-              <PropertyRef Name="AutorID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

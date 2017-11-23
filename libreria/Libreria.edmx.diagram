@@ -19,7 +19,7 @@
         <AssociationConnector Association="Libreria.LibrosLibroEjemplar" />
         <EntityTypeShape EntityType="Libreria.Clientes" Width="1.5" PointX="5.875" PointY="2.625" IsExpanded="false" />
         <AssociationConnector Association="Libreria.ClientesHistorial_Prestamo" />
-        <EntityTypeShape EntityType="Libreria.Direccion" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Libreria.Direccion" Width="1.5" PointX="6.25" PointY="1.5" IsExpanded="false" />
         <AssociationConnector Association="Libreria.ClientesDireccion" />
         <AssociationConnector Association="Libreria.LibroEjemplarHistorial_Prestamo" />
       </Diagram>
