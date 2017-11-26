@@ -301,9 +301,38 @@ AS
 		insert into LibroEjemplarSet
 		values (@Cod, @isbn, @count);
 	end
-Go;
+	;
+Go
+----- Update Genre
+CREATE PROCEDURE spUpdateGenre
+	@id  int,
+	@Name nvarchar(50)
+AS
+	declare @oldN nvarchar(50);
+	select @oldN = Genero from CategoriasSet where  Id = @id
+
+	if @oldN <> @Name
+	begin 
+		update CategoriasSet 
+		set Genero = @Name where Id = @id;
+	end
+	;
+
+go
+----- Nuevo Genero
+CREATE PROCEDURE spNewGenero
+	@Name nvarchar(250)
+AS
+	insert into CategoriasSet(Genero) values (@Name)
+
+		
 
 
+
+----Inserte Categorias
+Insert into CategoriasSet(Genero) values ('Ficcion')
+Insert into CategoriasSet(Genero) values ('Aventuras')
+Insert into CategoriasSet(Genero) values ('Drama')
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------
