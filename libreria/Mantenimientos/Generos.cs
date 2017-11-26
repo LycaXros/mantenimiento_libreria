@@ -22,7 +22,7 @@ namespace libreria.Mantenimientos
 
         private void Generos_Load(object sender, EventArgs e)
         {
-            //FillDataGrid();
+            FillDataGrid();
         }
 
         private void FillDataGrid()
