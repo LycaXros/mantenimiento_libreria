@@ -301,7 +301,7 @@ AS
 		insert into LibroEjemplarSet
 		values (@Cod, @isbn, @count);
 	end
-go
+Go;
 
 
 -- --------------------------------------------------
