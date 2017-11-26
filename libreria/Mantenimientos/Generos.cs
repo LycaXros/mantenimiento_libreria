@@ -13,11 +13,31 @@ namespace libreria.Mantenimientos
 {
     public partial class Generos : Form
     {
+        private static Generos _instance;
+
+        public static Generos Instancia
+
+        {
+            get {
+                if (_instance == null)
+                    _instance = new Generos();
+
+                return _instance;
+            }
+        }
+
+
+
         public int ID = 0;
-        public Generos()
+        private Generos()
         {
             InitializeComponent();
-            
+            this.Disposed += Generos_Disposed;
+        }
+
+        private void Generos_Disposed(object sender, EventArgs e)
+        {
+            _instance = null;         
         }
 
         private void Generos_Load(object sender, EventArgs e)
@@ -72,6 +92,28 @@ namespace libreria.Mantenimientos
                 new List<SqlParameter>() { new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Name", Value = text } }
                 );
             txtNew.Clear();
+            FillDataGrid();
+        }
+
+        private void Listado1_SelectionChanged(object sender, EventArgs e)
+        {
+            var idRow = (sender as DataGridView).CurrentRow.Index;
+            string ss = Listado1.Rows[idRow].Cells["Genero"].Value.ToString();
+            txtEdit.Text = ss;
+            int.TryParse(Listado1.Rows[idRow].Cells["Id"].Value.ToString(), out ID);
+        }
+
+        private void t_Click(object sender, EventArgs e)
+        {
+            var text = t.Text.Trim();
+            if (string.IsNullOrEmpty(text))
+                return;
+
+            DatabaseCon.Instancia.ExecProcedure(
+                "spDeleteGenero",
+                new List<SqlParameter>() { new SqlParameter() { ParameterName = "@ID", SqlDbType = SqlDbType.Int, Value = ID } }
+                );
+            txtEdit.Clear();
             FillDataGrid();
         }
     }

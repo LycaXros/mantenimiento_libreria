@@ -24,7 +24,19 @@ namespace libreria
 
         private void generosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Box = new Mantenimientos.Generos();
+            var Box = Mantenimientos.Generos.Instancia;
+            Box.MdiParent = this;
+            Box.Show();
+        }
+
+        private void busquedasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void librosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Box = Busquedas.SchLibros.Instancia;
             Box.MdiParent = this;
             Box.Show();
         }

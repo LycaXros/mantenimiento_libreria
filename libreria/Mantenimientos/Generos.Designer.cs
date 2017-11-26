@@ -44,12 +44,17 @@
             // 
             // Listado1
             // 
+            this.Listado1.AllowUserToAddRows = false;
+            this.Listado1.AllowUserToDeleteRows = false;
             this.Listado1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Listado1.Location = new System.Drawing.Point(36, 44);
+            this.Listado1.MultiSelect = false;
             this.Listado1.Name = "Listado1";
+            this.Listado1.ReadOnly = true;
+            this.Listado1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Listado1.Size = new System.Drawing.Size(352, 150);
             this.Listado1.TabIndex = 2;
-            this.Listado1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Listado1_CellContentClick);
+            this.Listado1.SelectionChanged += new System.EventHandler(this.Listado1_SelectionChanged);
             // 
             // label1
             // 
@@ -120,6 +125,7 @@
             this.t.TabIndex = 2;
             this.t.Text = "Eliminar";
             this.t.UseVisualStyleBackColor = true;
+            this.t.Click += new System.EventHandler(this.t_Click);
             // 
             // btnEdit
             // 

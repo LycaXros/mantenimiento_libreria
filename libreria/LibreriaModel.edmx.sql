@@ -323,9 +323,26 @@ go
 CREATE PROCEDURE spNewGenero
 	@Name nvarchar(250)
 AS
-	insert into CategoriasSet(Genero) values (@Name)
+	insert into CategoriasSet(Genero) values (@Name);
+	go
+---- Eliminar Genero
+CREATE PROCEDURE spDeleteGenero
+	@ID int
+AS
 
+	Delete from CategoriasSet where Id = @ID;
+go
 		
+
+-------Vistas
+---Vista Generos con total de libros
+CREATE VIEW vwGenerosLibrosCount
+	AS 
+	SELECT c.Id, C.Genero , Count(lb.CategoriaId) as Total_Libros from CategoriasSet as C left join LibrosSet as lb
+	on c.Id = lb.CategoriaId
+	group by c.Id, c.Genero;
+	go
+-----------
 
 
 
@@ -333,6 +350,14 @@ AS
 Insert into CategoriasSet(Genero) values ('Ficcion')
 Insert into CategoriasSet(Genero) values ('Aventuras')
 Insert into CategoriasSet(Genero) values ('Drama')
+;
+go
+------INSERTANDO Libros
+exec spInsertLibro '978-84-8441-755-2', 'La Piramide Roja, Las Cronicas de Kane Vol. 1', 'España', 5, 'Montena', 1
+
+
+
+
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------
