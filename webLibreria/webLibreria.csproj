@@ -129,10 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="App_Data\LbGC.mdf" />
-    <Content Include="App_Data\LbGC_log.ldf">
-      <DependentUpon>LbGC.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\LbHC.mdf" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

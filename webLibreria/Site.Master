@@ -68,17 +68,19 @@
             </div>
         </div>
 
-        <div class="w3-container">
+        <div class="w3-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - LIbreria HC, proyecto Final Base de datos
 
-                </p>
-            </footer>
         </div>
+        <hr />
+        <footer class="w3-diplay-container">
+            <p class="w3-display-middle">
+                &copy; <%: DateTime.Now.Year %> - LIbreria HC, proyecto Final Base de datos
 
+               
+            </p>
+        </footer>
     </form>
 </body>
 </html>

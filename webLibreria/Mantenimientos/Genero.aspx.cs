@@ -37,7 +37,7 @@ namespace webLibreria.Mantenimientos
                 "spNewGenero",
                 new List<SqlParameter>() { new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Name", Value = Name } }
                 );
-
+            txtGenero.Text = string.Empty;
             FillDataGrid();
         }
 
