@@ -146,13 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="LibreriaHC.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="LibreriaHC_log.ldf">
-      <DependentUpon>LibreriaHC.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="LibreriaModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
